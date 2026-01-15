@@ -204,13 +204,14 @@
   .order-btn {
     max-width: 160px;
     /* Compact width */
-    padding: 10px 20px;
-    /* Reduced height */
-    font-size: 12px;
-    /* Smaller text */
+    padding: 14px 20px;
+    /* Increased height from 10px */
+    font-size: 13px;
+    /* Slightly larger text from 12px */
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 40px;
+    min-height: 48px;
+    /* Increased from 40px */
   }
 }
