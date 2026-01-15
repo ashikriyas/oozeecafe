@@ -202,10 +202,15 @@
   .special-btn button,
   .menu-btn button,
   .order-btn {
-    max-width: 100%;
-    padding: 18px;
-    /* Slightly increased */
-    font-size: 15px;
-    /* Slightly increased */
+    max-width: 160px;
+    /* Compact width */
+    padding: 10px 20px;
+    /* Reduced height */
+    font-size: 12px;
+    /* Smaller text */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
   }
 }
