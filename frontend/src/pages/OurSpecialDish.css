@@ -1,6 +1,7 @@
 .special-wrapper {
   background-color: #ffffff;
-  padding: 130px 6% 0 6%; /* Removed bottom padding */
+  padding: 130px 6% 0 6%;
+  /* Removed bottom padding */
   text-align: center;
   font-family: "Poppins", sans-serif;
 }
@@ -27,7 +28,8 @@
 /* Top & Bottom Buttons */
 .special-btn,
 .menu-btn {
-  margin: 50px 0 0 0; /* Remove bottom margin */
+  margin: 50px 0 0 0;
+  /* Remove bottom margin */
 }
 
 /* Buttons Style (Green Border Transparent) */
@@ -39,8 +41,10 @@
   padding: 15px;
   border-radius: 50px;
   background: transparent;
-  border: 1.5px solid #4f7f5a; /* Green border */
-  color: #4f7f5a; /* Green text */
+  border: 1.5px solid #4f7f5a;
+  /* Green border */
+  color: #4f7f5a;
+  /* Green text */
   font-weight: 600;
   cursor: pointer;
   font-size: 14px;
@@ -51,8 +55,10 @@
 .special-btn button:hover,
 .menu-btn button:hover,
 .order-btn:hover {
-  background: #4f7f5a; /* Green background on hover */
-  color: #fff; /* White text on hover */
+  background: #4f7f5a;
+  /* Green background on hover */
+  color: #fff;
+  /* White text on hover */
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(79, 127, 90, 0.35);
 }
@@ -151,8 +157,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px; /* reduced gap */
-  margin-bottom: 0; /* Remove bottom space */
+  gap: 15px;
+  /* reduced gap */
+  margin-bottom: 0;
+  /* Remove bottom space */
 }
 
 .menu-btn .menu-caption {
@@ -164,7 +172,7 @@
   opacity: 0.8;
 }
 
-.menu-btn button:hover + .menu-caption {
+.menu-btn button:hover+.menu-caption {
   transform: translateY(-3px);
   opacity: 1;
 }
@@ -195,5 +203,9 @@
   .menu-btn button,
   .order-btn {
     max-width: 100%;
+    padding: 18px;
+    /* Slightly increased */
+    font-size: 15px;
+    /* Slightly increased */
   }
 }

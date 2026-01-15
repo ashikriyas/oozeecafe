@@ -171,8 +171,13 @@
   }
 
   .btn.primary {
-    padding: 12px 32px;
+    padding: 12px 24px;
+    /* Reduced horizontal padding */
     font-size: 14px;
+    display: inline-flex;
+    /* Changed to flex for easier centering control if needed */
+    align-items: center;
+    justify-content: center;
   }
 
   .miami-visual {
@@ -189,7 +194,8 @@
 =============================== */
 @media (max-width: 480px) {
   .btn.primary {
-    padding: 8px 24px;
+    padding: 8px 16px;
+    /* Reduced from 24px */
     font-size: 12px;
     border-radius: 32px;
     box-shadow: 0 6px 16px rgba(79, 127, 90, 0.22);
