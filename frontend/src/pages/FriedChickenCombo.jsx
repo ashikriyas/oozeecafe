@@ -131,7 +131,7 @@ const addOnItems = [
 
 const FriedChickenCombo = () => {
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // Scroll handled by ScrollToTop component
   }, []);
 
   /* ===== WHATSAPP MESSAGE WITH SECTION ===== */

@@ -10,24 +10,21 @@
 
 html {
   font-size: 16px;
-  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-html,
-body,
-#root {
-  height: 100%;
-  width: 100%;
   overflow-x: hidden;
-  /* Prevent horizontal scroll */
 }
 
 body {
   background-color: #fff;
   color: #000;
   line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
 }
 
 /* ===============================

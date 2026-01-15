@@ -43,7 +43,7 @@ const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // Scroll handled by ScrollToTop
   }, []);
 
   const toggleFAQ = (index) => {

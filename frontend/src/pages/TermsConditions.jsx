@@ -5,7 +5,7 @@ const Terms = () => {
 
   // Scroll to top when page loads
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // Scroll handled by ScrollToTop
   }, []);
 
   return (

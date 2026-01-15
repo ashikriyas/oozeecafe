@@ -30,7 +30,7 @@ import { FaLeaf, FaRegSmile, FaClock, FaStar } from "react-icons/fa";
 const AboutUs = () => {
     // Scroll to top whenever this page loads
     useEffect(() => {
-        window.scrollTo(0, 0);
+        // Scroll handled by ScrollToTop
     }, []);
 
     const categories = [

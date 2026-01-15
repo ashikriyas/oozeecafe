@@ -263,7 +263,7 @@ const Menu = () => {
   const [searchTerm, setSearchTerm] = React.useState("");
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // Scroll handled by ScrollToTop component
   }, []);
 
   const buildMessage = (item, category) => {

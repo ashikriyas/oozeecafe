@@ -3,8 +3,7 @@ import "./PrivacyPolicy.css";
 
 const PrivacyPolicy = () => {
   useEffect(() => {
-    // Scroll to top when page loads
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // Scroll handled by ScrollToTop
   }, []);
 
   return (

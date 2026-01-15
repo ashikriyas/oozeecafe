@@ -80,7 +80,7 @@
   margin-top: 20px;
 }
 
-/* BUTTON STYLING */
+/* BUTTON BASE */
 .btn {
   display: inline-block;
   text-decoration: none;
@@ -90,6 +90,7 @@
   transition: all 0.3s ease;
 }
 
+/* BUTTON DESKTOP */
 .btn.primary {
   background: linear-gradient(135deg, #4f7f5a, #3e654a);
   color: #ffffff;
@@ -97,12 +98,12 @@
   font-size: 15px;
   border-radius: 50px;
   border: none;
-  box-shadow: 0 15px 35px rgba(79,127,90,0.3);
+  box-shadow: 0 15px 35px rgba(79, 127, 90, 0.3);
 }
 
 .btn.primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 20px 45px rgba(79,127,90,0.4);
+  box-shadow: 0 20px 45px rgba(79, 127, 90, 0.4);
 }
 
 /* IMAGE SIDE */
@@ -114,12 +115,12 @@
   width: 100%;
   max-width: 900px;
   object-fit: contain;
-  background: none; 
-  border: none;     
-  box-shadow: none; 
+  background: none;
+  border: none;
+  box-shadow: none;
 }
 
-/* IMAGE MOBILE – shows after heading */
+/* IMAGE MOBILE */
 .miami-visual-mobile {
   display: none;
   text-align: center;
@@ -130,20 +131,20 @@
   width: 100%;
   max-width: 500px;
   object-fit: contain;
-  background: none; 
-  border: none;     
+  background: none;
+  border: none;
 }
 
-/* Footer Line at bottom */
+/* FOOTER LINE */
 .miami-footer-line {
   width: 100%;
   height: 1px;
   background-color: #4f7f5a;
-  opacity: 0.2; /* subtle */
+  opacity: 0.2;
   margin-top: 50px;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE LAYOUT */
 @media (max-width: 1000px) {
   .miami-wrapper {
     grid-template-columns: 1fr;
@@ -166,19 +167,38 @@
 
   .miami-actions {
     text-align: center;
+    margin-top: 30px;
+  }
+
+  .btn.primary {
+    padding: 12px 32px;
+    font-size: 14px;
   }
 
   .miami-visual {
-    display: none; /* hide right side image on mobile */
+    display: none;
   }
 
   .miami-visual-mobile {
-    display: block; /* show image after heading on mobile */
+    display: block;
   }
 }
 
-/* ENSURE NO EXTRA BOTTOM SPACE */
-body, html {
+/* ===============================
+   EXTRA SMALL MOBILE BUTTON
+=============================== */
+@media (max-width: 480px) {
+  .btn.primary {
+    padding: 8px 24px;
+    font-size: 12px;
+    border-radius: 32px;
+    box-shadow: 0 6px 16px rgba(79, 127, 90, 0.22);
+  }
+}
+
+/* REMOVE EXTRA SPACE */
+body,
+html {
   margin: 0;
   padding: 0;
 }
