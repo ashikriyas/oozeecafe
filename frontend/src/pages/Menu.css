@@ -53,8 +53,8 @@
 }
 
 .menu-search-box:focus-within {
-  border-color: #4f7f5a;
-  box-shadow: 0 6px 25px rgba(79, 127, 90, 0.15);
+  box-shadow: 0 6px 25px rgba(79, 127, 90, 0.1);
+  /* Subtle shadow instead of border */
   transform: translateY(-2px);
 }
 
@@ -75,6 +75,11 @@
   font-size: 1rem;
   color: #333;
   background: transparent;
+}
+
+.menu-search-input:focus {
+  outline: none;
+  border: none;
 }
 
 .menu-search-input::placeholder {
