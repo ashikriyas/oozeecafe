@@ -11,7 +11,8 @@ a {
 =============================== */
 .navbar {
   width: 100%;
-  height: 78px; /* increased */
+  height: 78px;
+  /* increased */
   padding: 0 48px;
   background: #ffffff;
   display: flex;
@@ -37,7 +38,8 @@ a {
    LOGO
 =============================== */
 .navbar-logo img {
-  height: 66px; /* increased */
+  height: 66px;
+  /* increased */
   cursor: pointer;
   transition: transform 0.4s ease;
 }
@@ -52,16 +54,21 @@ a {
 .navbar-links {
   display: flex;
   align-items: center;
-  gap: 40px; /* increased */
+  gap: 40px;
+  /* increased */
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar-links li a {
-  font-size: 16px; /* increased */
+  font-size: 16px;
+  /* increased */
   font-weight: 500;
   color: #000;
   position: relative;
-  padding: 10px 6px; /* increased */
+  padding: 10px 6px;
+  /* increased */
   transition: color 0.3s ease;
   min-height: 48px;
   display: flex;
@@ -91,7 +98,8 @@ a {
 
 /* CTA Button */
 .navbar-links li a.cta {
-  padding: 12px 26px; /* increased */
+  padding: 12px 26px;
+  /* increased */
   border: 2px solid #4f7f5a;
   border-radius: 28px;
   transition: all 0.3s ease;
@@ -124,7 +132,8 @@ a {
 }
 
 .menu-toggle span {
-  width: 28px; /* increased */
+  width: 28px;
+  /* increased */
   height: 3px;
   background: #000;
   transition: all 0.4s ease;
@@ -194,7 +203,9 @@ a {
     background: #ffffff;
     flex-direction: column;
     align-items: center;
-    padding-top: 44px;
+    padding-top: 0;
+    /* Removed top gap */
+    margin: 0;
     border-left: 1px solid #e5e5e5;
     box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
 
@@ -211,15 +222,27 @@ a {
 
   .navbar-links li {
     width: 100%;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: none;
+    /* Removed item underline/separator */
   }
 
   .navbar-links li a {
-    font-size: 17px; /* increased */
+    font-size: 17px;
     padding: 18px 24px;
     min-height: 60px;
     width: 100%;
     justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+    /* Remove mobile grey highlight */
+    transition: all 0.3s ease;
+  }
+
+  .navbar-links li a:hover,
+  .navbar-links li a.active {
+    background: transparent !important;
+    /* Ensure no grey background */
+    color: #4f7f5a;
+    /* Theme consistent color */
   }
 
   .navbar-links li a::after {
@@ -266,6 +289,11 @@ a {
     font-size: 16px;
     padding: 16px 20px;
   }
+
+  .navbar-links {
+    top: 64px;
+    /* Maintain alignment */
+  }
 }
 
 /* ===============================
@@ -275,6 +303,7 @@ a {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -303,6 +332,7 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .navbar,
   .navbar-links,
   .menu-toggle span,
