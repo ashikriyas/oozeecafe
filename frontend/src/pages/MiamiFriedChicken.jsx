@@ -40,14 +40,14 @@ const MiamiFriedChicken = () => {
             <div className="type-card">
               <h4>Classical Miami Fried Chicken</h4>
               <p>
-                The timeless original — golden, crispy on the outside and juicy on the inside. 
+                The timeless original — golden, crispy on the outside and juicy on the inside.
                 Perfectly balanced seasoning with a hint of herbs, a true classic for all fried chicken lovers.
               </p>
             </div>
             <div className="type-card">
               <h4>Signature Peri-Peri Fried Chicken</h4>
               <p>
-                Bold, spicy, and full of flavor — marinated with our special Peri-Peri blend, 
+                Bold, spicy, and full of flavor — marinated with our special Peri-Peri blend,
                 delivering a fiery kick with every bite. Ideal for those seeking a premium, adventurous taste.
               </p>
             </div>
@@ -55,7 +55,7 @@ const MiamiFriedChicken = () => {
 
           {/* BUTTON AS LINK */}
           <div className="miami-actions hero-cta">
-            <Link to="/menu" className="btn primary">
+            <Link to="/friedchicken" className="btn primary">
               Order Now
             </Link>
           </div>

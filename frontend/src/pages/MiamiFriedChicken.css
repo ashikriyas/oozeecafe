@@ -99,6 +99,8 @@
   border-radius: 50px;
   border: none;
   box-shadow: 0 15px 35px rgba(79, 127, 90, 0.3);
+  text-decoration: none !important;
+  /* Force remove underline */
 }
 
 .btn.primary:hover {
