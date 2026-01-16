@@ -200,9 +200,13 @@ a {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   }
 
-  /* Add padding to body to prevent content from hiding behind fixed navbar */
+  /* Prevent content from hiding behind fixed navbar and fix anchor scrolling */
   body {
     padding-top: 64px !important;
+  }
+
+  html {
+    scroll-padding-top: 64px !important;
   }
 
   .navbar-logo img {
