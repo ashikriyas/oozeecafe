@@ -187,46 +187,54 @@
 @media (max-width: 600px) {
   .special-cards {
     grid-template-columns: 1fr;
+    gap: 110px;
+    /* Increased gap to account for plate images */
   }
 
   .special-header h2 {
-    font-size: 30px;
+    font-size: 28px;
   }
 
   .plate-image {
     width: 200px;
     height: 200px;
-    margin-top: -120px;
+    margin-top: -125px;
   }
 
-  .special-btn button,
-  .menu-btn button,
-  .order-btn {
-    max-width: 300px;
-    width: 92%;
-    padding: 16px 32px;
-    font-size: 15px;
-    font-weight: 700;
-    display: flex;
-    margin: 25px auto 0;
-    /* Balanced margin top */
-    align-items: center;
-    justify-content: center;
-    min-height: 56px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    border-radius: 8px;
-    /* More modern, professional shape */
-    transition: all 0.3s ease;
-    border: none;
-    background: #4f7f5a;
-    /* Solid background for a "strong" look */
-    color: #ffffff;
-    box-shadow: 0 4px 12px rgba(79, 127, 90, 0.2);
+  /* FORCE REDESIGN - MOBILE ONLY */
+  .special-wrapper .special-cards .special-card a.order-btn {
+    display: flex !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    min-height: 52px !important;
+    margin: 35px auto 0 !important;
+    padding: 0 20px !important;
+    background: #4f7f5a !important;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.2px !important;
+    border-radius: 50px !important;
+    /* Premium Pill Shape */
+    border: none !important;
+    box-shadow: 0 8px 25px rgba(79, 127, 90, 0.4) !important;
+    transition: all 0.3s ease !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+    opacity: 1 !important;
   }
 
-  .order-btn:active {
-    transform: scale(0.98);
-    box-shadow: 0 2px 6px rgba(79, 127, 90, 0.2);
+  .special-wrapper .special-cards .special-card a.order-btn:active {
+    transform: scale(0.96) !important;
+    box-shadow: 0 4px 10px rgba(79, 127, 90, 0.3) !important;
+  }
+
+  .menu-btn button {
+    max-width: 260px !important;
+    width: 90% !important;
+    min-height: 52px !important;
+    font-weight: 700 !important;
   }
 }
