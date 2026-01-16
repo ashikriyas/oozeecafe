@@ -146,6 +146,7 @@ a {
 
 .menu-toggle.open span:nth-child(2) {
   opacity: 0;
+  /* Keeping this as it's the standard way to hide the middle bar, but ensure the toggle itself is solid */
   transform: translateX(-20px);
 }
 
@@ -197,27 +198,22 @@ a {
     position: fixed;
     top: 64px;
     right: 0;
-    width: 78%;
-    max-width: 320px;
+    width: 300px;
     height: calc(100vh - 64px);
     background: #ffffff;
     flex-direction: column;
-    align-items: center;
-    padding-top: 0;
-    /* Removed top gap */
+    align-items: flex-start;
+    padding: 10px 0;
     margin: 0;
-    border-left: 1px solid #e5e5e5;
-    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+    border-left: 1px solid #eeeeee;
+    box-shadow: none;
 
     transform: translateX(100%);
-    opacity: 0;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-      opacity 0.3s ease;
+    transition: transform 0.3s ease-in-out;
   }
 
   .navbar-links.active {
     transform: translateX(0);
-    opacity: 1;
   }
 
   .navbar-links li {
@@ -227,22 +223,19 @@ a {
   }
 
   .navbar-links li a {
-    font-size: 17px;
-    padding: 18px 24px;
-    min-height: 60px;
+    font-size: 16px;
+    padding: 16px 30px;
+    min-height: 54px;
     width: 100%;
-    justify-content: center;
+    justify-content: flex-start;
     -webkit-tap-highlight-color: transparent;
-    /* Remove mobile grey highlight */
-    transition: all 0.3s ease;
+    transition: background 0.2s ease, color 0.2s ease;
   }
 
   .navbar-links li a:hover,
   .navbar-links li a.active {
-    background: transparent !important;
-    /* Ensure no grey background */
+    background: #fcfcfc !important;
     color: #4f7f5a;
-    /* Theme consistent color */
   }
 
   .navbar-links li a::after {
@@ -250,23 +243,16 @@ a {
   }
 
   .navbar-links li a.cta {
-    margin: 24px;
-    width: calc(100% - 48px);
-    border-radius: 32px;
+    margin: 20px 30px;
+    width: calc(100% - 60px);
+    border-radius: 4px;
     font-weight: 600;
+    justify-content: center;
+    background: #4f7f5a;
+    color: white;
   }
 
-  .navbar-links.active::before {
-    content: '';
-    position: fixed;
-    top: 64px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: -1;
-    animation: fadeIn 0.3s ease;
-  }
+  /* Removed .navbar-links.active::before overlay */
 }
 
 /* ===============================
@@ -282,17 +268,8 @@ a {
   }
 
   .navbar-links {
-    width: 88%;
-  }
-
-  .navbar-links li a {
-    font-size: 16px;
-    padding: 16px 20px;
-  }
-
-  .navbar-links {
+    width: 280px;
     top: 64px;
-    /* Maintain alignment */
   }
 }
 
