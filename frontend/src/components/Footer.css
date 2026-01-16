@@ -13,7 +13,8 @@
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns desktop */
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 columns desktop */
   gap: 40px;
   padding-bottom: 25px;
   border-bottom: 1px solid #e0e0e0;
@@ -61,12 +62,14 @@
 
 /* SOCIAL ICONS CENTERED */
 .footer-social {
-  text-align: center; /* center everything inside social */
+  text-align: center;
+  /* center everything inside social */
 }
 
 .footer-social .social-icons {
   display: flex;
-  justify-content: center; /* center icons horizontally */
+  justify-content: center;
+  /* center icons horizontally */
   gap: 15px;
   margin-top: 5px;
 }
@@ -84,12 +87,14 @@
 
 /* LOCATION CENTERED */
 .footer-location {
-  text-align: center; /* center location content */
+  text-align: center;
+  /* center location content */
 }
 
 .location-row {
   display: flex;
-  justify-content: center; /* center horizontally */
+  justify-content: center;
+  /* center horizontally */
   gap: 10px;
   align-items: flex-start;
   margin-top: 5px;
@@ -105,7 +110,8 @@
   font-size: 14px;
   color: #555;
   line-height: 1.6;
-  text-align: center; /* center text */
+  text-align: center;
+  /* center text */
   margin: 0;
 }
 
@@ -122,7 +128,8 @@
 ============================== */
 @media (max-width: 992px) {
   .footer-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns */
     gap: 30px;
   }
 
@@ -140,14 +147,19 @@
   }
 
   .footer-container {
-    grid-template-columns: 1fr; /* stacked vertically */
+    grid-template-columns: 1fr;
+    /* stacked vertically */
     gap: 25px;
-    text-align: center; /* center all columns on mobile */
+    text-align: center;
+    /* center all columns on mobile */
   }
 
   .footer-logo {
     width: 110px;
-    margin-bottom: 8px;
+    margin: 0 auto 8px auto;
+    /* Centers the block-level image */
+    display: block;
+    /* Ensures consistent centering behavior */
   }
 
   .footer-links h3,
