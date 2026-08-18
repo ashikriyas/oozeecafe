@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import InstallPrompt from "./components/InstallPrompt";
 
 // Pages / Sections
 import Header from "./components/Header";
@@ -24,6 +25,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+      <InstallPrompt />
       <ScrollToTop />
 
       <div className="main-content">

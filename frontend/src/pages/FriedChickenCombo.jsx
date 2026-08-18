@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import "./FriedChickenCombo.css";
 
-import periPeriBanner from "../assets/peri_peri.png";
 import classicBanner from "../assets/chicken_banner.png";
 
 /* ADD-ON IMAGES */
@@ -14,15 +13,20 @@ const whatsappNumber = "8129110411";
 
 /* ================= EXISTING DATA (UNCHANGED) ================= */
 
-const periPeriCombos = [
+const classicCombos = [
+  {
+    name: "Student Meal",
+    price: "₹160",
+    items: ["1 Leg PC", "1 Bun", "French Fries", "Oreo Shake"],
+  },
   {
     name: "Mini Meal",
-    price: "₹230",
+    price: "₹220",
     items: ["2 PC Fried", "2 Bun", "1 Mayonnaise", "250 ml Pepsi", "French Fries"],
   },
   {
     name: "Dinner Meal",
-    price: "₹330",
+    price: "₹340",
     items: ["3 PC Fried", "3 Bun", "2 Mayonnaise", "750 ml Pepsi", "French Fries"],
   },
   {
@@ -31,72 +35,29 @@ const periPeriCombos = [
     items: ["4 PC Fried", "4 Bun", "2 Mayonnaise", "750 ml Pepsi", "French Fries"],
   },
   {
-    name: "Snack Meal",
-    price: "₹650",
-    items: ["6 PC Fried", "4 Bun", "3 Mayonnaise", "750 ml Pepsi", "French Fries", "1 Coleslaw"],
-  },
-  {
-    name: "Mini Party Meal",
-    price: "₹850",
-    items: ["8 PC Fried", "4 Bun", "3 Mayonnaise", "750 ml Pepsi", "French Fries", "1 Coleslaw"],
-  },
-  {
-    name: "Party Meal",
-    price: "₹1250",
-    items: ["12 PC Fried", "6 Bun", "4 Mayonnaise", "2.25 Ltr Pepsi", "French Fries", "2 Coleslaw"],
-  },
-  {
-    name: "Family Meal",
-    price: "₹1550",
-    items: ["16 PC Fried", "8 Bun", "4 Mayonnaise", "2.25 Ltr Pepsi", "French Fries", "2 Coleslaw"],
-  }
-];
-
-const classicCombos = [
-  {
-    name: "Student Meal",
-    price: "₹140",
-    items: ["1 Leg PC", "1 Bun", "French Fries", "Oreo Shake"],
-  },
-  {
-    name: "Mini Meal",
-    price: "₹200",
-    items: ["2 PC Fried", "2 Bun", "1 Mayonnaise", "250 ml Pepsi", "French Fries"],
-  },
-  {
-    name: "Dinner Meal",
-    price: "₹300",
-    items: ["3 PC Fried", "3 Bun", "2 Mayonnaise", "750 ml Pepsi", "French Fries"],
-  },
-  {
-    name: "Big Meal",
-    price: "₹400",
-    items: ["4 PC Fried", "4 Bun", "2 Mayonnaise", "750 ml Pepsi", "French Fries"],
-  },
-  {
     name: "Snack Bag",
-    price: "₹600",
-    items: ["6 PC Fried", "4 Bun", "3 Mayonnaise", "750 ml Pepsi", "French Fries", "1 Coleslaw"],
+    price: "₹700",
+    items: ["6 PC Fried", "4 Bun", "3 Mayonnaise", "750 ml Pepsi", "French Fries"],
   },
   {
     name: "Mini Party Meal",
-    price: "₹800",
+    price: "₹900",
     items: ["8 PC Fried", "4 Bun", "3 Mayonnaise", "750 ml Pepsi", "French Fries", "1 Coleslaw"],
   },
   {
     name: "Party Meal",
-    price: "₹1200",
+    price: "₹1350",
     items: ["12 PC Fried", "6 Bun", "4 Mayonnaise", "2.25 Ltr Pepsi", "French Fries", "2 Coleslaw"],
   },
   {
     name: "Family Meal",
-    price: "₹1500",
-    items: ["16 PC Fried", "8 Bun", "4 Mayonnaise", "2.25 Ltr Pepsi", "French Fries", "Coleslaw"],
+    price: "₹1700",
+    items: ["16 PC Fried", "8 Bun", "4 Mayonnaise", "2.25 Ltr Pepsi", "French Fries", "2 Coleslaw"],
   },
   {
     name: "Jumbo Family Meal",
     price: "₹2200",
-    items: ["24 PC Fried", "12 Bun", "6 Mayonnaise", "2.25 Ltr Pepsi", "French Fries(L)", "3 Coleslaw"],
+    items: ["24 PC Fried", "8 Bun", "4 Mayonnaise", "2.25 Ltr Pepsi", "French Fries(L)", "2 Coleslaw"],
   },
 ];
 
@@ -181,15 +142,6 @@ Delivery Location:
 
   return (
     <section className="combo-wrapper">
-
-      {/* PERI PERI */}
-      <div className="combo-section">
-        <h2 className="section-title">Miami Peri Peri Combo</h2>
-        <img className="section-banner" src={periPeriBanner} alt="Peri Peri Combo" />
-        <div className="combo-grid">
-          {renderCards(periPeriCombos, "Peri Peri Fried Chicken")}
-        </div>
-      </div>
 
       {/* CLASSIC */}
       <div className="combo-section">

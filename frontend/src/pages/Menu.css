@@ -1,13 +1,22 @@
 /* ===============================
    PAGE WRAPPER
 =============================== */
-.menu-page {
+.menu-page-wrapper {
   background: #ffffff;
-  padding: 70px 7%;
   font-family: "Segoe UI", sans-serif;
+}
+
+.menu-page {
+  padding: 70px 7% 30px;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 0.8s forwards ease-in-out;
+}
+
+.menu-body {
+  padding: 40px 7% 70px;
+  animation: fadeInUp 0.8s 0.1s forwards ease-in-out;
+  opacity: 0;
 }
 
 /* ===============================
@@ -39,6 +48,105 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+/* ===============================
+   CATEGORY STRIP
+=============================== */
+.cat-strip-wrapper {
+  position: sticky;
+  top: 78px; /* matches desktop navbar height */
+  z-index: 900;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  padding: 0 4%;
+}
+
+.cat-strip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 12px 0;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE */
+}
+
+.cat-strip::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.cat-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  background: #f8f8f8;
+  border: 1.5px solid transparent;
+  border-radius: 16px;
+  padding: 8px 14px 6px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.22s ease;
+  text-align: center;
+  min-width: 74px;
+}
+
+.cat-chip:hover {
+  background: #f0faf3;
+  border-color: #c0ddc8;
+  transform: translateY(-2px);
+}
+
+.cat-chip--active {
+  background: #4f7f5a;
+  border-color: #4f7f5a;
+  box-shadow: 0 4px 14px rgba(79,127,90,0.3);
+  transform: translateY(-2px);
+}
+
+.cat-chip-img {
+  width: 48px;
+  height: 38px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.cat-chip-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #444;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.cat-chip--active .cat-chip-label {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .cat-strip-wrapper {
+    top: 64px;
+    padding: 0 16px;
+  }
+
+  .cat-chip {
+    padding: 6px 10px 5px;
+    min-width: 64px;
+    border-radius: 13px;
+  }
+
+  .cat-chip-img {
+    width: 40px;
+    height: 32px;
+  }
+
+  .cat-chip-label {
+    font-size: 0.62rem;
+  }
+}
+
 
 .menu-search-box {
   position: relative;
@@ -204,9 +312,39 @@
   box-shadow: 0 25px 55px rgba(0, 0, 0, 0.08);
 }
 
+/* Special category gold highlight */
+.menu-card--special {
+  border: 2px solid #e8a027;
+  box-shadow: 0 18px 40px rgba(232, 160, 39, 0.12);
+}
+
+.menu-card--special:hover {
+  box-shadow: 0 25px 55px rgba(232, 160, 39, 0.22);
+}
+
 /* ===============================
    IMAGE
 =============================== */
+.menu-image {
+  position: relative;
+}
+
+.special-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: linear-gradient(135deg, #e8a027, #c97d10);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  z-index: 2;
+  letter-spacing: 0.3px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+
 .menu-image img {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -267,6 +405,18 @@
   color: #4f7f5a;
 }
 
+.item-note {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #a0622a;
+  background: #fff6ee;
+  border: 1px solid #f0d4b8;
+  border-radius: 6px;
+  padding: 1px 6px;
+  display: inline-block;
+  width: fit-content;
+}
+
 /* RIGHT SIDE */
 .item-right {
   display: flex;
@@ -297,12 +447,77 @@
   transition: all 0.3s ease;
   white-space: nowrap;
   height: 32px;
-  min-width: 80px;
+  min-width: 64px;
 }
 
 .order-btn:hover {
   background: #4f7f5a;
   color: #ffffff;
+}
+
+/* ===============================
+   QUANTITY STEPPER
+=============================== */
+.qty-stepper {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: #f4faf6;
+  border: 1.5px solid #d4ead9;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.qty-btn {
+  width: 30px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  color: #4f7f5a;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 0;
+}
+
+.qty-btn:hover:not(:disabled) {
+  background: #4f7f5a;
+  color: #fff;
+}
+
+.qty-btn:disabled {
+  color: #bbb;
+  cursor: not-allowed;
+}
+
+.qty-count {
+  min-width: 26px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  user-select: none;
+}
+
+/* Running total shown when qty > 1 */
+.item-total {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #4f7f5a;
+  white-space: nowrap;
+  animation: totalPop 0.2s ease;
+}
+
+@keyframes totalPop {
+  from { transform: scale(0.8); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
 }
 
 /* ===============================
@@ -384,21 +599,36 @@
 
   /* SMALL FIXED BUTTON FOR MOBILE */
   .order-btn {
-    width: 60px;
-    /* small fixed width */
+    min-width: 52px;
     height: 28px;
-    /* fixed height */
     line-height: 28px;
-    /* vertically center text */
     text-align: center;
-    padding: 0;
-    /* remove extra padding */
+    padding: 0 8px;
     flex-shrink: 0;
-    /* prevent resizing */
-    font-size: 0.75rem;
-    /* smaller text for mobile */
+    font-size: 0.72rem;
+  }
+
+  /* Compact stepper on mobile */
+  .qty-stepper {
+    height: 28px;
+  }
+
+  .qty-btn {
+    width: 24px;
+    height: 28px;
+    font-size: 1rem;
+  }
+
+  .qty-count {
+    min-width: 20px;
+    font-size: 0.82rem;
+  }
+
+  .item-total {
+    font-size: 0.72rem;
   }
 }
+
 
 /* ===============================
    ANIMATION

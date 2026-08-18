@@ -1,0 +1,369 @@
+/* ==============================
+   INSTALL BANNER (bottom strip)
+============================== */
+.install-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 24px;
+  background: #fff;
+  border-top: 1px solid #e8e8e8;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.1);
+  animation: bannerSlideUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes bannerSlideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.install-banner-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.install-banner-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid #eee;
+  flex-shrink: 0;
+}
+
+.install-banner-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.install-banner-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.install-banner-sub {
+  font-size: 12px;
+  color: #888;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.install-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.install-banner-cta {
+  padding: 9px 20px;
+  background: #4f7f5a;
+  color: #fff;
+  border: none;
+  border-radius: 22px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+
+.install-banner-cta:hover {
+  background: #3d6347;
+  transform: scale(1.04);
+}
+
+.install-banner-dismiss {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 6px 8px;
+  line-height: 1;
+  transition: color 0.2s ease;
+  border-radius: 50%;
+}
+
+.install-banner-dismiss:hover {
+  color: #555;
+  background: #f5f5f5;
+}
+
+/* ==============================
+   INSTALL MODAL OVERLAY
+============================== */
+.install-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: overlayFadeIn 0.3s ease forwards;
+}
+
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ==============================
+   INSTALL MODAL CARD
+============================== */
+.install-modal {
+  position: relative;
+  background: #fff;
+  border-radius: 24px;
+  padding: 40px 32px 32px;
+  max-width: 380px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.18);
+  animation: modalPopIn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes modalPopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.install-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #f5f5f5;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 15px;
+  color: #777;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+
+.install-modal-close:hover {
+  background: #ebebeb;
+  color: #333;
+}
+
+.install-modal-icon {
+  width: 84px;
+  height: 84px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 0 auto 20px;
+  border: 2px solid #eee;
+  box-shadow: 0 8px 24px rgba(79, 127, 90, 0.18);
+}
+
+.install-modal-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.install-modal-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0 0 10px;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+}
+
+.install-modal-desc {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  margin: 0 0 22px;
+}
+
+/* ==============================
+   FEATURES GRID
+============================== */
+.install-modal-features {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.install-feature {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f4faf6;
+  border: 1px solid #d4ead9;
+  border-radius: 20px;
+  padding: 7px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #3d6347;
+}
+
+.install-feature-icon {
+  font-size: 14px;
+}
+
+/* ==============================
+   MODAL BUTTONS
+============================== */
+.install-modal-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.install-modal-btn {
+  width: 100%;
+  padding: 14px;
+  background: #4f7f5a;
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  letter-spacing: 0.2px;
+}
+
+.install-modal-btn:hover {
+  background: #3d6347;
+  transform: scale(1.02);
+}
+
+.install-modal-btn:active {
+  transform: scale(0.98);
+}
+
+.install-modal-btn-secondary {
+  width: 100%;
+  padding: 13px;
+  background: transparent;
+  color: #888;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.install-modal-btn-secondary:hover {
+  border-color: #bbb;
+  color: #555;
+}
+
+/* ==============================
+   IOS STEPS
+============================== */
+.install-ios-steps {
+  text-align: left;
+}
+
+.install-ios-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #444;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.install-ios-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: #444;
+  line-height: 1.5;
+}
+
+.install-ios-num {
+  min-width: 24px;
+  height: 24px;
+  background: #4f7f5a;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.install-ios-icon {
+  font-size: 16px;
+}
+
+.install-ios-steps .install-modal-btn {
+  margin-top: 16px;
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+@media (max-width: 480px) {
+  .install-banner {
+    padding: 12px 16px;
+  }
+
+  .install-modal {
+    padding: 32px 22px 26px;
+    border-radius: 20px;
+  }
+
+  .install-modal-title {
+    font-size: 19px;
+  }
+
+  .install-modal-features {
+    gap: 8px;
+  }
+
+  .install-feature {
+    padding: 6px 11px;
+    font-size: 11px;
+  }
+}
