@@ -250,6 +250,28 @@
   box-shadow: 0 12px 35px rgba(245, 158, 11, 0.1);
 }
 
+.menu-card--highlighted {
+  border: 2px solid #4f7f5a !important;
+  box-shadow: 0 0 0 6px rgba(79, 127, 90, 0.25), 0 20px 45px rgba(79, 127, 90, 0.2) !important;
+  animation: pulseCard 1.5s ease-in-out;
+}
+
+@keyframes pulseCard {
+  0% {
+    transform: scale(0.98);
+    box-shadow: 0 0 0 0 rgba(79, 127, 90, 0.4);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 10px rgba(79, 127, 90, 0.25);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(79, 127, 90, 0.15);
+  }
+}
+
+
 /* IMAGE HEADER */
 .menu-image {
   position: relative;

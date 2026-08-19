@@ -279,18 +279,58 @@ const Menu = () => {
   const [cart, setCart] = useState({});
   const [activeCategory, setActiveCategory] = useState(null);
   const [showCartModal, setShowCartModal] = useState(false);
+  const [highlightedCategory, setHighlightedCategory] = useState(null);
+
 
   const scrollToCategory = (category) => {
-    setActiveCategory(category);
-    const catId = `cat-${category.replace(/\s+/g, "-").toLowerCase()}`;
-    const el = document.getElementById(catId);
-    if (el) {
-      const isMobile = window.innerWidth <= 768;
-      const offset = isMobile ? 120 : 150;
-      const top = el.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top, behavior: "smooth" });
+    // Reset search if active so all categories are visible
+    if (searchTerm) {
+      setSearchTerm("");
     }
+    setActiveCategory(category);
+    setHighlightedCategory(category);
+
+    setTimeout(() => {
+      const catId = `cat-${category.replace(/\s+/g, "-").toLowerCase()}`;
+      const el = document.getElementById(catId);
+      if (el) {
+        // Calculate dynamic offset based on navbar + sticky strip
+        const catStrip = document.querySelector(".cat-strip-wrapper");
+        const stripHeight = catStrip ? catStrip.offsetHeight : 80;
+        const navbar = document.querySelector(".navbar");
+        const navHeight = navbar ? navbar.offsetHeight : 70;
+        const totalOffset = navHeight + stripHeight + 15;
+
+        const top = el.getBoundingClientRect().top + window.scrollY - totalOffset;
+        window.scrollTo({ top, behavior: "smooth" });
+
+        // Auto center the clicked chip in the horizontal category bar
+        const chipEl = document.getElementById(`chip-${category.replace(/\s+/g, "-").toLowerCase()}`);
+        if (chipEl) {
+          chipEl.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+        }
+      }
+    }, 50);
+
+    // Remove highlight after 2.5 seconds
+    setTimeout(() => {
+      setHighlightedCategory(null);
+    }, 2500);
   };
+
+  // Scroll to hash on initial load if present (e.g. /menu#momos)
+  useEffect(() => {
+    const hash = window.location.hash.replace("#", "").toLowerCase();
+    if (hash) {
+      const matched = menuData.find(
+        (m) => m.category.replace(/\s+/g, "-").toLowerCase() === hash
+      );
+      if (matched) {
+        scrollToCategory(matched.category);
+      }
+    }
+  }, []);
+
 
   const getQty = (key) => cart[key]?.qty || 0;
 
@@ -458,16 +498,20 @@ Please prepare and deliver our order. Thank you!`;
       {/* ===== STICKY CATEGORY STRIP ===== */}
       <div className="cat-strip-wrapper">
         <div className="cat-strip">
-          {menuData.map((section) => (
-            <button
-              key={section.category}
-              className={`cat-chip ${activeCategory === section.category ? "cat-chip--active" : ""}`}
-              onClick={() => scrollToCategory(section.category)}
-            >
-              <img src={section.image} alt={section.category} className="cat-chip-img" />
-              <span className="cat-chip-label">{section.category}</span>
-            </button>
-          ))}
+          {menuData.map((section) => {
+            const chipId = `chip-${section.category.replace(/\s+/g, "-").toLowerCase()}`;
+            return (
+              <button
+                key={section.category}
+                id={chipId}
+                className={`cat-chip ${activeCategory === section.category ? "cat-chip--active" : ""}`}
+                onClick={() => scrollToCategory(section.category)}
+              >
+                <img src={section.image} alt={section.category} className="cat-chip-img" />
+                <span className="cat-chip-label">{section.category}</span>
+              </button>
+            );
+          })}
         </div>
       </div>
 
@@ -476,16 +520,20 @@ Please prepare and deliver our order. Thank you!`;
         <div className="menu-container">
           {filteredMenuData.map((section) => {
             const isSpecial = ["Special Items", "Iffa Classic", "Iffa Kandari", "Ooze Special Chicken"].includes(section.category);
+            const isHighlighted = highlightedCategory === section.category;
+            const catId = `cat-${section.category.replace(/\s+/g, "-").toLowerCase()}`;
+
             return (
               <div
-                className={`menu-card${isSpecial ? " menu-card--special" : ""}`}
+                className={`menu-card${isSpecial ? " menu-card--special" : ""}${isHighlighted ? " menu-card--highlighted" : ""}`}
                 key={section.originalIndex}
-                id={`cat-${section.category.replace(/\s+/g, "-").toLowerCase()}`}
+                id={catId}
               >
                 <div className="menu-image">
                   {isSpecial && <div className="special-badge">⭐ House Special</div>}
                   <img src={section.image} alt={section.category} />
                 </div>
+
 
                 <div className="menu-content">
                   <div className="category-header">
