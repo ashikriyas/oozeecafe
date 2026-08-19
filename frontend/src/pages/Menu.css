@@ -165,22 +165,60 @@
   backdrop-filter: blur(10px);
   border-bottom: 1px solid #f0f0f0;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
-  padding: 0 4%;
+  padding: 0 48px;
   width: 100%;
   max-width: 100vw;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.cat-strip-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1.5px solid #e5e7eb;
+  color: #374151;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.cat-strip-nav-btn:hover {
+  background: #4f7f5a;
+  border-color: #4f7f5a;
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.cat-strip-prev {
+  margin-right: 8px;
+}
+
+.cat-strip-next {
+  margin-left: 8px;
 }
 
 .cat-strip {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   overflow-x: auto;
   padding: 10px 0;
   scrollbar-width: none;
   -ms-overflow-style: none;
   width: 100%;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 .cat-strip::-webkit-scrollbar {
@@ -195,11 +233,11 @@
   background: #f9fafb;
   border: 1.5px solid #f3f4f6;
   border-radius: 14px;
-  padding: 8px 12px 6px;
+  padding: 8px 14px 6px;
   cursor: pointer;
   transition: all 0.25s ease;
   flex-shrink: 0;
-  min-width: 68px;
+  min-width: 72px;
   outline: none;
   -webkit-tap-highlight-color: transparent;
 }
@@ -218,15 +256,15 @@
 }
 
 .cat-chip-img {
-  width: 42px;
-  height: 32px;
+  width: 44px;
+  height: 34px;
   object-fit: cover;
   border-radius: 8px;
   display: block;
 }
 
 .cat-chip-label {
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   font-weight: 700;
   color: #4b5563;
   white-space: nowrap;
@@ -242,11 +280,13 @@
 =============================== */
 .menu-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns on desktop */
+  gap: 30px;
   width: 100%;
   box-sizing: border-box;
+  align-items: stretch;
 }
+
 
 /* ===============================
    CARD DESIGN
@@ -947,15 +987,46 @@
    RESPONSIVE MEDIA QUERIES
 =============================== */
 
-/* Tablet (max 992px) */
-@media (max-width: 992px) {
-  .cat-strip-wrapper {
-    top: 70px;
+/* Ultra-Wide Desktop (min-width: 1440px) */
+@media (min-width: 1440px) {
+  .menu-body {
+    max-width: 1440px;
+    padding: 30px 48px 70px;
   }
 
   .menu-container {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+}
+
+/* Standard Desktop (1024px to 1439px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .menu-body {
+    max-width: 1200px;
+    padding: 24px 32px 60px;
+  }
+
+  .menu-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+  }
+}
+
+/* Tablet & Small Laptops (769px to 1023px) */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .cat-strip-wrapper {
+    top: 70px;
+    padding: 0 24px;
+  }
+
+  .menu-body {
+    padding: 20px 24px 60px;
+  }
+
+  .menu-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
   }
 
   .menu-header h1 {
@@ -965,12 +1036,16 @@
 
 /* Mobile Devices (max 768px) */
 @media (max-width: 768px) {
+  .cat-strip-nav-btn {
+    display: none !important; /* Hide arrows on touch screens */
+  }
+
   .menu-page {
-    padding: 30px 12px 10px;
+    padding: 28px 14px 10px;
   }
 
   .menu-body {
-    padding: 16px 10px 50px;
+    padding: 14px 14px 50px;
   }
 
   .menu-header h1 {
@@ -979,7 +1054,7 @@
 
   .cat-strip-wrapper {
     top: 64px;
-    padding: 0 10px;
+    padding: 0 12px;
   }
 
   .cat-chip {
@@ -1010,11 +1085,11 @@
 /* Small Mobile Phones (max 480px) */
 @media (max-width: 480px) {
   .menu-page {
-    padding: 24px 8px 8px;
+    padding: 22px 10px 8px;
   }
 
   .menu-body {
-    padding: 12px 8px 50px;
+    padding: 10px 10px 50px;
   }
 
   .menu-header h1 {
@@ -1092,6 +1167,7 @@
     height: 14px;
   }
 }
+
 
 /* ===============================
    ANIMATIONS

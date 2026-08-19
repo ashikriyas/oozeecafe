@@ -497,7 +497,25 @@ Please prepare and deliver our order. Thank you!`;
 
       {/* ===== STICKY CATEGORY STRIP ===== */}
       <div className="cat-strip-wrapper">
-        <div className="cat-strip">
+        <button
+          className="cat-strip-nav-btn cat-strip-prev"
+          onClick={() => {
+            const strip = document.querySelector(".cat-strip");
+            if (strip) strip.scrollBy({ left: -250, behavior: "smooth" });
+          }}
+          aria-label="Scroll categories left"
+        >
+          ‹
+        </button>
+
+        <div
+          className="cat-strip"
+          onWheel={(e) => {
+            if (e.deltaY !== 0) {
+              e.currentTarget.scrollLeft += e.deltaY;
+            }
+          }}
+        >
           {menuData.map((section) => {
             const chipId = `chip-${section.category.replace(/\s+/g, "-").toLowerCase()}`;
             return (
@@ -513,7 +531,19 @@ Please prepare and deliver our order. Thank you!`;
             );
           })}
         </div>
+
+        <button
+          className="cat-strip-nav-btn cat-strip-next"
+          onClick={() => {
+            const strip = document.querySelector(".cat-strip");
+            if (strip) strip.scrollBy({ left: 250, behavior: "smooth" });
+          }}
+          aria-label="Scroll categories right"
+        >
+          ›
+        </button>
       </div>
+
 
       {/* ===== MENU BODY ===== */}
       <div className="menu-body">
