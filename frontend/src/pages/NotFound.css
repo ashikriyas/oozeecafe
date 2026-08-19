@@ -1,0 +1,88 @@
+.notfound-container {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background: #fdfbf9;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.notfound-content {
+  max-width: 520px;
+}
+
+.notfound-emoji {
+  font-size: 64px;
+  display: block;
+  margin-bottom: 12px;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.notfound-code {
+  font-size: 80px;
+  font-weight: 900;
+  color: #4f7f5a;
+  margin: 0 0 10px 0;
+  line-height: 1;
+}
+
+.notfound-content h2 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 12px;
+}
+
+.notfound-content p {
+  color: #6b7280;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.notfound-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-home {
+  background: #4f7f5a;
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 18px rgba(79, 127, 90, 0.25);
+}
+
+.btn-home:hover {
+  background: #3e654a;
+  transform: translateY(-2px);
+}
+
+.btn-menu {
+  background: #ffffff;
+  border: 1.5px solid #e5e7eb;
+  color: #1f2937;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-menu:hover {
+  border-color: #4f7f5a;
+  color: #4f7f5a;
+  transform: translateY(-2px);
+}

@@ -1,17 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import "./ContactUs.css";
+import { FaMapMarkerAlt, FaClock, FaPhoneAlt, FaWhatsapp, FaDirections } from "react-icons/fa";
 
 const ContactUs = () => {
   const whatsappNumber = "8129110411";
-  const defaultMessage = encodeURIComponent(
-    "Hello! I would like to contact your cafe."
-  );
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${defaultMessage}`;
+  const [customMsg, setCustomMsg] = useState("");
 
-  // Scroll to top on page load
-  useEffect(() => {
-    // Scroll handled by ScrollToTop
-  }, []);
+  const handleSendMessage = () => {
+    const text = encodeURIComponent(
+      customMsg.trim() || "Hello Ooze Cafe! I would like to inquire about your menu / table reservation / delivery."
+    );
+    window.open(`https://wa.me/${whatsappNumber}?text=${text}`, "_blank");
+  };
+
+  const googleMapsUrl = "https://www.google.com/maps/search/?api=1&query=Fathima+Arcade+Near+Ansar+Juma+Masjid+New+Bus+Stand+Kasargod";
 
   return (
     <section className="contact-page animate-fade-in">
@@ -19,77 +21,106 @@ const ContactUs = () => {
 
         {/* Header */}
         <div className="contact-header">
-          <h1>Contact Us</h1>
+          <span className="contact-badge">📍 Visit or Order Online</span>
+          <h1>Contact Us & Location</h1>
           <p>
-            We would love to hear from you. Contact our team directly via WhatsApp.
+            We'd love to serve you! Visit us for a cozy dine-in experience or order your favorite meals via WhatsApp.
           </p>
         </div>
 
-        {/* Card */}
+        {/* Contact Card */}
         <div className="contact-card">
 
           {/* Info */}
           <div className="contact-info">
-            <h2>Our Cafe</h2>
+            <h2>Ooze Cafe Details</h2>
 
             <div className="info-item">
               <span className="icon">
-                <svg viewBox="0 0 24 24">
-                  <path d="M12 2C7.6 2 4 5.6 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.4-3.6-8-8-8zm0 10.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 7.5 12 7.5s2.5 1.1 2.5 2.5S13.4 12.5 12 12.5z" />
-                </svg>
+                <FaMapMarkerAlt />
               </span>
-              <p>
-                Fathima Arcade (Behind Just Bake) <br />
-                Near Ansar Juma Masjid, New Bus Stand, Kasargod
-              </p>
+              <div>
+                <strong>Our Address:</strong>
+                <p>
+                  Fathima Arcade (Behind Just Bake)<br />
+                  Near Ansar Juma Masjid, New Bus Stand<br />
+                  Kasargod, Kerala - India
+                </p>
+              </div>
             </div>
 
             <div className="info-item">
               <span className="icon">
-                <svg viewBox="0 0 24 24">
-                  <path d="M12 1a11 11 0 100 22 11 11 0 000-22zm1 11.4V6h-2v7l6 3.5 1-1.7-5-2.4z" />
-                </svg>
+                <FaClock />
               </span>
-              <p>9:00 AM – 10:30 PM</p>
+              <div>
+                <strong>Operating Hours:</strong>
+                <p>Monday – Sunday: 9:00 AM – 10:30 PM</p>
+              </div>
             </div>
 
             <div className="info-item">
               <span className="icon">
-                <svg viewBox="0 0 24 24">
-                  <path d="M6.6 10.8a15.5 15.5 0 006.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1 .4 2.1.6 3.2.6.7 0 1.2.5 1.2 1.2V20c0 .7-.5 1.2-1.2 1.2C10.4 21.2 2.8 13.6 2.8 4.2 2.8 3.5 3.3 3 4 3h3.4c.7 0 1.2.5 1.2 1.2 0 1.1.2 2.2.6 3.2.1.4 0 .9-.2 1.2l-2.4 2.2z" />
-                </svg>
+                <FaPhoneAlt />
               </span>
-              <p>8129110411</p>
+              <div>
+                <strong>Phone & Direct Line:</strong>
+                <p>
+                  <a href="tel:8129110411" className="contact-phone-link">+91 81291 10411</a>
+                </p>
+              </div>
+            </div>
+
+            <div className="maps-action-box">
+              <a
+                href={googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="directions-btn"
+              >
+                <FaDirections />
+                <span>Get Directions on Google Maps</span>
+              </a>
             </div>
           </div>
 
-          {/* Action */}
+          {/* Action / WhatsApp Messaging */}
           <div className="contact-action">
-            <h3>Send a Message</h3>
+            <h3>💬 Send Us a Direct Message</h3>
+            <p className="action-subtitle">Have a question or special request? Drop a message below:</p>
 
             <textarea
-              placeholder="Write your message here..."
-              onChange={(e) => {
-                const msg = encodeURIComponent(
-                  e.target.value || "Hello! I would like to contact your cafe."
-                );
-                document.getElementById("wa-btn").href =
-                  `https://wa.me/${whatsappNumber}?text=${msg}`;
-              }}
+              placeholder="Type your message, inquiry, or custom order here..."
+              value={customMsg}
+              onChange={(e) => setCustomMsg(e.target.value)}
+              rows="5"
             />
 
-            <a
-              id="wa-btn"
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={handleSendMessage}
               className="whatsapp-btn"
             >
-              Contact via WhatsApp
-            </a>
+              <FaWhatsapp />
+              <span>Send via WhatsApp</span>
+            </button>
           </div>
 
         </div>
+
+        {/* Embedded Map Visual */}
+        <div className="map-embed-wrapper">
+          <iframe
+            title="Ooze Cafe Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.353381665476!2d74.985!3d12.51!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDMwJzM2LjAiTiA3NMKwNTknMDYuMCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+            width="100%"
+            height="320"
+            style={{ border: 0, borderRadius: "18px" }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
       </div>
     </section>
   );

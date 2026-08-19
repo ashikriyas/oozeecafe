@@ -20,6 +20,7 @@ import Terms from "./pages/TermsConditions.jsx";
 import FAQ from "./pages/FAQ";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import MiamiFriedChicken from "./pages/MiamiFriedChicken";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -52,6 +53,9 @@ function App() {
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/faq" element={<FAQ />} />
+
+          {/* 404 Catch-All */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
       <Footer />
@@ -60,3 +64,4 @@ function App() {
 }
 
 export default App;
+

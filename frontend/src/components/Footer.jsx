@@ -1,8 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   FaWhatsapp,
   FaInstagram,
   FaFacebookF,
+  FaPhoneAlt,
   FaMapMarkerAlt
 } from "react-icons/fa";
 import "./Footer.css";
@@ -15,36 +17,49 @@ const Footer = () => {
 
         {/* Brand */}
         <div className="footer-brand">
-          <img src={Logo} alt="Ooze Cafe Logo" className="footer-logo" />
-          <p>Where Taste Meets Comfort</p>
+          <Link to="/">
+            <img src={Logo} alt="Ooze Cafe Logo" className="footer-logo" />
+          </Link>
+          <p>Where Taste Meets Comfort • 156+ Curated Dishes</p>
+          <div className="footer-quick-contact">
+            <a href="tel:8129110411" className="footer-contact-item">
+              <FaPhoneAlt /> +91 81291 10411
+            </a>
+            <span className="footer-contact-item">
+              <FaMapMarkerAlt /> Kasargod, Kerala
+            </span>
+          </div>
         </div>
 
         {/* Quick Links */}
         <div className="footer-links">
           <h3>Quick Links</h3>
-          <a href="/" className="footer-link">Home</a>
-          <a href="/about" className="footer-link">About Us</a>
-          <a href="/menu" className="footer-link">Menu</a>
-          <a href="/contact" className="footer-link">Contact Us</a>
+          <Link to="/" className="footer-link">Home</Link>
+          <Link to="/about" className="footer-link">About Us</Link>
+          <Link to="/menu" className="footer-link">Our Menu (150+)</Link>
+          <Link to="/friedchicken" className="footer-link">Miami Fried Chicken</Link>
+          <Link to="/contact" className="footer-link">Contact & Location</Link>
         </div>
 
         {/* Legal */}
         <div className="footer-links">
-          <h3>Legal</h3>
-          <a href="/terms" className="footer-link">Terms & Conditions</a>
-          <a href="/privacy-policy" className="footer-link">Privacy Policy</a>
-          <a href="/faq" className="footer-link">FAQ</a>
+          <h3>Information</h3>
+          <Link to="/terms" className="footer-link">Terms & Conditions</Link>
+          <Link to="/privacy-policy" className="footer-link">Privacy Policy</Link>
+          <Link to="/faq" className="footer-link">FAQ & Ordering Help</Link>
         </div>
 
         {/* Social Media */}
         <div className="footer-social">
-          <h3>Follow Us</h3>
+          <h3>Follow & Order</h3>
+          <p className="footer-social-desc">Open Daily: 9:00 AM – 10:30 PM</p>
           <div className="social-icons">
             <a
-              href="https://wa.me/8129110411"
+              href="https://wa.me/918129110411"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
+              className="social-icon-btn whatsapp"
             >
               <FaWhatsapp />
             </a>
@@ -54,6 +69,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
+              className="social-icon-btn instagram"
             >
               <FaInstagram />
             </a>
@@ -63,6 +79,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
+              className="social-icon-btn facebook"
             >
               <FaFacebookF />
             </a>
@@ -74,7 +91,7 @@ const Footer = () => {
       {/* Bottom */}
       <div className="footer-bottom">
         <p>
-          © {new Date().getFullYear()} Ooze Cafe. All rights reserved.
+          © {new Date().getFullYear()} Ooze Cafe. All rights reserved. Crafted with ❤️ for food lovers.
         </p>
       </div>
     </footer>
