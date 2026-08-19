@@ -115,14 +115,15 @@ const classicCombos = [
   {
     id: 9,
     name: "Jumbo Family Meal",
-    price: "₹2200",
-    numericPrice: 2200,
+    price: "₹2400",
+    numericPrice: 2400,
     badge: "👑 Ultimate Feast",
     image: classicBanner,
     category: "party",
     portion: "24 PCS Monster Bucket",
     items: ["24 PC Fried Chicken", "8 Fresh Buns", "4 Garlic Mayonnaise", "2.25 Ltr Pepsi Bottle", "Large French Fries (L)", "2 House Coleslaws"],
   },
+
 ];
 
 /* ================= ADD-ON ITEMS ================= */
