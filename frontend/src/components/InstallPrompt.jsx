@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./InstallPrompt.css";
-import logo from "../assets/logo_white.JPG";
+import appIcon from "../assets/app_icon.png";
+
 
 const InstallPrompt = () => {
   const [deferredPrompt, setDeferredPrompt] = useState(null);
@@ -91,10 +92,10 @@ const InstallPrompt = () => {
       {showBanner && !showModal && (
         <div className="install-banner" role="complementary" aria-label="Install app prompt">
           <div className="install-banner-left">
-            <img src={logo} alt="Ooze Cafe" className="install-banner-logo" />
+            <img src={appIcon} alt="Ooze Cafe App Icon" className="install-banner-logo" />
             <div className="install-banner-text">
-              <span className="install-banner-title">Add to Home Screen</span>
-              <span className="install-banner-sub">Get the full app experience</span>
+              <span className="install-banner-title">Install Ooze Cafe App</span>
+              <span className="install-banner-sub">Tap for fast ordering & offline menu</span>
             </div>
           </div>
           <div className="install-banner-actions">
@@ -123,7 +124,7 @@ const InstallPrompt = () => {
             <button className="install-modal-close" onClick={handleDismiss} aria-label="Close">✕</button>
 
             <div className="install-modal-icon">
-              <img src={logo} alt="Ooze Cafe" />
+              <img src={appIcon} alt="Ooze Cafe" />
             </div>
 
             <h2 className="install-modal-title">Add Ooze Cafe to<br />Your Home Screen</h2>
