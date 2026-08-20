@@ -31,7 +31,6 @@ const dishes = [
     badge: "🔥 Customer Favorite",
     variants: [
       { label: "Half", price: "₹400/-", numericPrice: 400, portion: "Half • 2 Porotta included" },
-      { label: "Full", price: "₹800/-", numericPrice: 800, portion: "Full • 4 Porotta included" },
     ],
     description:
       "Crispy chicken seasoned with authentic Turkish herbs and paprika, perfectly crunchy outside and succulent inside. A bold Mediterranean flavor sensation.",
