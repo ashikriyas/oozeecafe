@@ -24,13 +24,39 @@ import strips from "../assets/chicken_strips_classic.png";
 import hexaSpcl from "../assets/hexa_spcl.png";
 import iffaSpcl from "../assets/iffa_spcl.png";
 import kandariSpcl from "../assets/kandari_spcl.png";
-import oozeChicken from "../assets/afghani_spcl.png";
+import afghaniSpcl from "../assets/afghani_spcl.png";
+import turkishSpcl from "../assets/turkish_spcl.png";
+import honeyGlazedSpcl from "../assets/honey_glazed_spcl.jpg";
 
 const whatsappNumber = "8129110411";
 
 /* ===== MENU DATA ===== */
 const menuData = [
   // ===== OUR SPECIAL =====
+  {
+    category: "Honey Glazed Fried",
+    image: honeyGlazedSpcl,
+    items: [
+      { name: "Full Honey Glazed Fried", price: "₹800/-", note: "+ 4 Porotta", porottaPerUnit: 4 },
+      { name: "Half Honey Glazed Fried", price: "₹400/-", note: "+ 2 Porotta", porottaPerUnit: 2 },
+    ]
+  },
+  {
+    category: "Turkish Fried Chicken",
+    image: turkishSpcl,
+    items: [
+      { name: "Full Turkish Fried Chicken", price: "₹800/-", note: "+ 4 Porotta", porottaPerUnit: 4 },
+      { name: "Half Turkish Fried Chicken", price: "₹400/-", note: "+ 2 Porotta", porottaPerUnit: 2 },
+    ]
+  },
+  {
+    category: "Afghani Fried Chicken",
+    image: afghaniSpcl,
+    items: [
+      { name: "Full Afghani Fried Chicken", price: "₹800/-", note: "+ 4 Porotta", porottaPerUnit: 4 },
+      { name: "Half Afghani Fried Chicken", price: "₹400/-", note: "+ 2 Porotta", porottaPerUnit: 2 },
+    ]
+  },
   {
     category: "Special Items",
     image: hexaSpcl,
@@ -55,14 +81,6 @@ const menuData = [
     items: [
       { name: "Full Kandari Iffa", price: "₹650/-", note: "+ 3 Porotta", porottaPerUnit: 3 },
       { name: "Half Kandari Iffa", price: "₹370/-", note: "+ 2 Porotta", porottaPerUnit: 2 },
-    ]
-  },
-  {
-    category: "Ooze Special Chicken",
-    image: oozeChicken,
-    items: [
-      { name: "Full Ooze Special", price: "₹700/-", note: "+ 3 Porotta", porottaPerUnit: 3 },
-      { name: "Half Ooze Special", price: "₹400/-", note: "+ 2 Porotta", porottaPerUnit: 2 },
     ]
   },
   // ===== REGULAR MENU =====
@@ -549,7 +567,7 @@ Please prepare and deliver our order. Thank you!`;
       <div className="menu-body">
         <div className="menu-container">
           {filteredMenuData.map((section) => {
-            const isSpecial = ["Special Items", "Iffa Classic", "Iffa Kandari", "Ooze Special Chicken"].includes(section.category);
+            const isSpecial = ["Honey Glazed Fried", "Turkish Fried Chicken", "Afghani Fried Chicken", "Special Items", "Iffa Classic", "Iffa Kandari"].includes(section.category);
             const isHighlighted = highlightedCategory === section.category;
             const catId = `cat-${section.category.replace(/\s+/g, "-").toLowerCase()}`;
 
