@@ -45,6 +45,7 @@ const menuData = [
     category: "Turkish Fried Chicken",
     image: turkishSpcl,
     items: [
+      { name: "Full Turkish Fried Chicken", price: "₹800/-", note: "+ 4 Porotta", porottaPerUnit: 4 },
       { name: "Half Turkish Fried Chicken", price: "₹400/-", note: "+ 2 Porotta", porottaPerUnit: 2 },
     ]
   },
