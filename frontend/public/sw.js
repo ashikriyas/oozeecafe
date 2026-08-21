@@ -1,13 +1,16 @@
-const CACHE_NAME = "oozecafe-pwa-v2";
+const CACHE_NAME = "oozecafe-pwa-v4";
 const STATIC_ASSETS = [
-  "./",
-  "./index.html",
-  "./manifest.json",
-  "./pwa-192.png",
-  "./pwa-512.png",
-  "./apple-touch-icon.png",
-  "./favicon.png",
-  "./favicon.ico"
+  "/",
+  "/index.html",
+  "/manifest.json",
+  "/pwa-192.png",
+  "/pwa-512.png",
+  "/pwa-maskable-192.png",
+  "/pwa-maskable-512.png",
+  "/apple-touch-icon.png",
+  "/favicon.png",
+  "/favicon-32x32.png",
+  "/favicon-16x16.png"
 ];
 
 // Install: cache essential static assets safely
